@@ -23,25 +23,25 @@ public class UserController {
     @GetMapping("")
     public String list(Model model) {
         model.addAttribute("users", userRepository.findAll());
-        return "02/index";
+        return "04/index";
     }
 
     @GetMapping("/addUserModal")
     public String addUser() {
-        return "02/modal :: modal";
+        return "04/modal :: modal";
     }
 
     @GetMapping("/getFakeUser")
     public String getFakeUser(Model model) {
         var user = userRepository.createFakeUser();
         model.addAttribute("user",user);
-        return "02/new-user-form :: frmNewUser";
+        return "04/new-user-form :: frmNewUser";
     }
 
     @PostMapping("")
     public String save(@RequestBody User user, Model model) {
         // add new user
-        return "02/new-user-row :: row";
+        return "04/new-user-row :: row";
     }
 
 }
